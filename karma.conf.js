@@ -1,3 +1,4 @@
+var path    = require('path');
 module.exports = function (config) {
   config.set({
     // base path used to resolve all patterns
