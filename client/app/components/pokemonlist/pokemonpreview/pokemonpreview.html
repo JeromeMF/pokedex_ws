@@ -1,0 +1,31 @@
+<li  
+  class="pokemon-preview"
+>
+  <a
+    ui-sref="pokemonview({ id: $ctrl.pokemon.id, name: $ctrl.pokemon.name })"
+  >
+    <p>#{{$ctrl.pokemon.id}} <b>{{$ctrl.pokemon.name}}</b></p>
+    <div class="img-cnt">
+      <img
+        ng-src="http://pokeunlock.com/wp-content/uploads/2015/01/{{$ctrl.pokemon.id}}.png"
+        onerror='this.style.display = "none"'
+      />
+    </div>
+    <div class="types-cnt">
+      <div
+        ng-show="$ctrl.pokemon.types[0]"
+        class="type"
+        ng-class="$ctrl.pokemon.types[0].name"
+      >
+        {{$ctrl.pokemon.types[0].name}}
+      </div>
+      <div
+        ng-show="$ctrl.pokemon.types[1]"
+        class="type"
+        ng-class="$ctrl.pokemon.types[1].name"
+      >
+        {{$ctrl.pokemon.types[1].name}}
+      </div>
+    </div>
+  </a>
+</li>

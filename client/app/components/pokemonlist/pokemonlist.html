@@ -1,4 +1,24 @@
 <navbar></navbar>  
-<div>
-  <h1>{{ $ctrl.name }}</h1>
-</div>
+<div class="container main-container">  
+  <ul
+    class="pokemon-list"
+  >
+    <pokemonpreview
+      ng-repeat="pokemon in $ctrl.pokemons | orderBy: 'id'"
+      pokemon="pokemon"
+    ></pokemonpreview>
+  </ul>
+  <div class="row">
+    <div class="col-sm-2 col-sm-offset-5">
+      <button
+        ng-click="$ctrl.getMore()"
+        class="button-get-more"
+      >LOAD MORE</button>
+    </div>
+  </div>
+</div> 
+
+<ul
+    class="pokemon-list"
+    infinite-scroll="$ctrl.getMore()"
+  >

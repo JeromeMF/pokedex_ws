@@ -1,9 +1,13 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import pokemonlistComponent from './pokemonlist.component';
+import pokemonPreview from './pokemonpreview/pokemonpreview';
+import ngInfiniteScroll from 'ng-infinite-scroll';
 
 let pokemonlistModule = angular.module('pokemonlist', [
-	uiRouter
+	uiRouter,
+	pokemonPreview,
+	ngInfiniteScroll 
 	])
 
 .config(($stateProvider, $urlRouterProvider) => {
