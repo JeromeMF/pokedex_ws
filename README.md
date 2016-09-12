@@ -1,0 +1,2 @@
+# pokedex
+AngularJS workshop solution
