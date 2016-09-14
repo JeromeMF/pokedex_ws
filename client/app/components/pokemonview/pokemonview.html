@@ -1,0 +1,107 @@
+<navbar></navbar>  
+<div class="container main-container">  
+  <div class="row top-pokemon-navigator">
+    <a
+      ng-if="$ctrl.previousPokemon" ui-sref="pokemonview({ id: $ctrl.previousPokemon.id })"
+    >
+      <span class="id" >{{ $ctrl.previousPokemon.id }}</span>
+      <b>{{ $ctrl.previousPokemon.name }} </b>
+    </a>
+    <a
+      class="pull-right"
+      ui-sref="pokemonview({ id: $ctrl.nextPokemon.id })"
+    >
+      <b>{{ $ctrl.nextPokemon.name}}</b>
+      <span class="id">{{ $ctrl.nextPokemon.id}}</span>
+    </a>
+  </div>
+
+  <h1 class="text-center pokemon-page-name">
+    {{ $ctrl.pokemon.name }}
+  </h1>
+
+  <div class="pokemon-info">
+    <div class="left-col">
+      <div
+        class="pokemon-main"
+      >
+          <div class="img-cnt">
+            <img
+              ng-src="http://pokeunlock.com/wp-content/uploads/2015/01/{{$ctrl.pokemon.id | threeNumbersAlways}}.png"
+              onerror='this.style.display = "none"'
+            />
+          </div>
+          <div class="types-cnt">
+            <div
+              class="type"
+              ng-class=" $ctrl.pokemon.types[0].type.name"
+            >
+              {{ $ctrl.pokemon.types[0].type.name }}
+            </div>
+            <div
+              class="type"
+              ng-class="$ctrl.pokemon.types[1].type.name"
+            >
+              {{ $ctrl.pokemon.types[1].type.name }}
+            </div>
+          </div>
+      </div>
+
+      <div class="pokemon-description">
+        {{ $ctrl.pokeDescription.descriptions[1].description }}
+      </div>
+    </div>
+    <div class="right-col">
+      <div class="pokemon-specs">
+        <div class="spec">
+          <div class="spec-title">Height</div>
+          <div class="spec-data">{{ $ctrl.pokemon.height / 10 }} m</div>
+        </div>
+        <div class="spec">
+          <div class="spec-title">Base Experience</div>
+          <div class="spec-data">{{ $ctrl.pokemon.base_experience }}</div>
+        </div>
+        <div class="spec">
+          <div class="spec-title">Weight</div>
+          <div class="spec-data">{{ $ctrl.pokemon.weight / 10 }} kg</div>
+        </div>
+      </div>
+      <div class="pokemon-stats" >
+        <h2>Base Stats</h2>
+
+        <div
+          class="stat-col-cntn" 
+          ng-repeat="bstat in $ctrl.pokemon.stats"
+        >
+          <div class="stat-col">
+            <div
+              class="stat-col-fill"
+              ng-style="{height: '{{ bstat.base_stat }}px'}"
+            ></div>
+          </div>
+          <div class="stat-name">
+            {{ bstat.stat.name }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="moves-cntn">
+
+    <h2>Moves</h2>
+
+    <ul class="moves-list">
+
+      <li ng-repeat="move in $ctrl.pokemon.moves">
+        {{ move.move.name }}
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>  
+
+<pre>{{ $ctrl.pokemon | json }} </pre>

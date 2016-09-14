@@ -1,7 +1,7 @@
 @import '../../common/common'
 
 .main-container
-    background-color: white
+  background-color: white
 
 .pokemon-list
   list-style-type: none
@@ -10,11 +10,49 @@
   margin: 0
 
 .button-get-more
-    background: #E85B0E
-    border-radius: 4px
-    border: none
-    padding: 6px
-    width: 100%
-    cursor: pointer
-    box-shadow: 0px 1px 1px 3px rgba(0, 0, 0, 0.1)
-    margin-bottom: 60px
+  background: #E85B0E
+  border-radius: 4px
+  border: none
+  padding: 6px
+  width: 100%
+  cursor: pointer
+  box-shadow: 0px 1px 1px 3px rgba(0, 0, 0, 0.1)
+  margin-bottom: 60px
+
+.spinner
+  overflow: hidden
+  width: 100%
+  float: left
+  position: relative
+  height: 100px
+  margin-top: -50px
+
+  div
+    width: 20px
+    height: 20px
+    position: absolute
+    left: -20px
+    top: 40px
+    background-color: #A0DA5E
+    border-radius: 50%
+    animation: move 4s infinite cubic-bezier(.2,.64,.81,.23)
+
+    &:nth-child(2)
+      background-color: #E85B0E
+      animation-delay: 150ms
+
+    &:nth-child(3)
+      background-color: #4A90E2
+      animation-delay: 300ms
+
+    &:nth-child(4)
+      background-color: #BE93E7
+      animation-delay: 450ms
+
+@keyframes move
+  0%
+    left: 0%
+  75%
+    left: 100%
+  100%
+    left: 100%

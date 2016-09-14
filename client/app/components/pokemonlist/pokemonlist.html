@@ -8,12 +8,20 @@
       pokemon="pokemon"
     ></pokemonpreview>
   </ul>
-  <div class="row">
+  <div class="row" ng-show=!"$ctrl.gettingPokemons">>
     <div class="col-sm-2 col-sm-offset-5">
       <button
         ng-click="$ctrl.getMore()"
         class="button-get-more"
       >LOAD MORE</button>
+    </div>
+  </div>
+  <div class="row" ng-show="$ctrl.gettingPokemons">
+    <div class="spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   </div>
 </div> 

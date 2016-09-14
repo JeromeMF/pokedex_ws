@@ -7,7 +7,7 @@
     <p>#{{$ctrl.pokemon.id}} <b>{{$ctrl.pokemon.name}}</b></p>
     <div class="img-cnt">
       <img
-        ng-src="http://pokeunlock.com/wp-content/uploads/2015/01/{{$ctrl.pokemon.id}}.png"
+        ng-src="http://pokeunlock.com/wp-content/uploads/2015/01/{{$ctrl.pokemon.id | threeNumbersAlways}}.png"
         onerror='this.style.display = "none"'
       />
     </div>
@@ -15,16 +15,16 @@
       <div
         ng-show="$ctrl.pokemon.types[0]"
         class="type"
-        ng-class="$ctrl.pokemon.types[0].name"
+        ng-class="$ctrl.pokemon.types[0].type.name"
       >
-        {{$ctrl.pokemon.types[0].name}}
+        {{$ctrl.pokemon.types[0].type.name}}
       </div>
       <div
         ng-show="$ctrl.pokemon.types[1]"
         class="type"
-        ng-class="$ctrl.pokemon.types[1].name"
+        ng-class="$ctrl.pokemon.types[1].type.name"
       >
-        {{$ctrl.pokemon.types[1].name}}
+        {{$ctrl.pokemon.types[1].type.name}}
       </div>
     </div>
   </a>
