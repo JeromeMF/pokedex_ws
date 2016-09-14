@@ -62,7 +62,7 @@ let getPokemons = (offset, cb) => {
     // with a limit of 12 and an inputed offset
     $http({
     	method: 'GET',
-    	url: 'http://pokeapi.co/api/v2/pokemon/?limit=12&offset='+offset
+    	url: '//pokeapi.co/api/v2/pokemon/?limit=12&offset='+offset
     }).then((response) => {
 
       // these variables will help us keep track of how many
